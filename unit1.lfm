@@ -1,0 +1,257 @@
+object Form1: TForm1
+  Left = 431
+  Height = 519
+  Top = 214
+  Width = 813
+  Caption = 'Form1'
+  ClientHeight = 519
+  ClientWidth = 813
+  OnCreate = FormCreate
+  OnResize = FormResize
+  LCLVersion = '1.6.0.4'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 528
+    Top = 0
+    Width = 813
+    ActivePage = browserTab
+    TabIndex = 0
+    TabOrder = 0
+    object browserTab: TTabSheet
+      Caption = 'Browser'
+      ClientHeight = 493
+      ClientWidth = 803
+      OnContextPopup = browserTabContextPopup
+      object browser: TWebkitBrowser
+        Left = 8
+        Height = 448
+        Top = 32
+        Width = 779
+        TabOrder = 0
+        Settings = WebkitSettings1
+        OnLoaded = browserLoaded
+      end
+      object Button1: TButton
+        Left = 136
+        Height = 25
+        Top = 5
+        Width = 56
+        Caption = 'GO'
+        OnClick = Button1Click
+        TabOrder = 1
+      end
+      object Edit1: TEdit
+        Left = 208
+        Height = 33
+        Top = 0
+        Width = 160
+        OnEnter = Edit1Enter
+        TabOrder = 2
+        Text = 'http://2ip.ru'
+      end
+      object Label1: TLabel
+        Left = 376
+        Height = 21
+        Top = 5
+        Width = 43
+        Caption = 'Label1'
+        ParentColor = False
+      end
+      object btnStart: TButton
+        Left = 0
+        Height = 25
+        Top = 0
+        Width = 59
+        Caption = 'Start'
+        OnClick = btnStartClick
+        TabOrder = 3
+      end
+      object btnStop: TButton
+        Left = 64
+        Height = 25
+        Top = 0
+        Width = 59
+        Caption = 'Stop'
+        OnClick = btnStopClick
+        TabOrder = 4
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Tasks for BID'
+      ClientHeight = 493
+      ClientWidth = 803
+      object Button2: TButton
+        Left = 8
+        Height = 25
+        Top = 0
+        Width = 75
+        Caption = 'for_tests'
+        OnClick = Button2Click
+        TabOrder = 0
+      end
+      object Edit2: TEdit
+        Left = 144
+        Height = 33
+        Top = 0
+        Width = 640
+        TabOrder = 1
+      end
+      object Label2: TLabel
+        Left = 104
+        Height = 21
+        Top = 0
+        Width = 35
+        Caption = 'Log : '
+        ParentColor = False
+      end
+      object Button3: TButton
+        Left = 8
+        Height = 25
+        Top = 56
+        Width = 144
+        Caption = 'save_current_html'
+        OnClick = Button3Click
+        TabOrder = 2
+      end
+      object Edit3: TEdit
+        Left = 160
+        Height = 33
+        Top = 50
+        Width = 608
+        TabOrder = 3
+        Text = '/var/settingsWWW/lastHTML.html'
+      end
+      object Button4: TButton
+        Left = 45
+        Height = 25
+        Top = 139
+        Width = 155
+        Caption = 'test timer2'
+        OnClick = Button4Click
+        TabOrder = 4
+      end
+    end
+  end
+  object WebkitSettings1: TWebkitSettings
+    AutoLoadImages = True
+    AutoResizeWindow = False
+    AutoShrinkImages = True
+    CursiveFontFamily = 'serif'
+    DefaultEncoding = 'utf-8'
+    DefaultFontFamily = 'sans-serif'
+    DefaultFontSize = 12
+    DefaultMonospaceFontSize = 10
+    EnableAcceleratedCompositing = False
+    EnableCaretBrowsing = False
+    EnableDefaultContextMenu = True
+    EnableDeveloperExtras = False
+    EnableDnsPrefetching = True
+    EnableDomPaste = False
+    EnableFileAccessFromFileUris = False
+    EnableFrameFlattening = False
+    EnableFullscreen = False
+    EnableHtml5Database = True
+    EnableHtml5LocalStorage = True
+    EnableHyperlinkAuditing = False
+    EnableJavaApplet = True
+    EnableOfflineWebApplicationCache = True
+    EnablePageCache = True
+    EnablePlugins = True
+    EnablePrivateBrowsing = False
+    EnableScripts = True
+    EnableSiteSpecificQuirks = False
+    EnableSmoothScrolling = True
+    EnableSpatialNavigation = False
+    EnableSpellChecking = False
+    EnableUniversalAccessFromFileUris = False
+    EnableWebaudio = False
+    EnableWebgl = False
+    EnableXssAuditor = True
+    Enforce96Dpi = False
+    FantasyFontFamily = 'serif'
+    Html5LocalStorageDatabasePath = './'
+    JavascriptCanAccessClipboard = False
+    JavascriptCanOpenWindowsAutomatically = False
+    MediaPlaybackAllowsInline = True
+    MediaPlaybackRequiresUserGesture = True
+    MinimumFontSize = 5
+    MinimumLogicalFontSize = 5
+    MonospaceFontFamily = 'monospace'
+    PrintBackgrounds = True
+    ResizableTextAreas = True
+    SansSerifFontFamily = 'sans-serif'
+    SerifFontFamily = 'serif'
+    TabKeyCyclesThroughElements = True
+    UserAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.22+ (KHTML, like Gecko) Chromium/17.0.963.56 Chrome/17.0.963.56 Safari/535.22+'
+    ZoomStep = 0.100000001490116
+    left = 752
+    top = 480
+  end
+  object MySQL55Connection1: TMySQL55Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'yahooJapan'
+    KeepConnection = True
+    Params.Strings = (
+      'Port=3306'
+    )
+    Password = '3_!ud19[]=-'
+    Transaction = checkQueryTransaction
+    UserName = 'yJapanProgBid1'
+    HostName = '160.16.83.246'
+    LogEvents = []
+    Options = []
+    left = 232
+    top = 320
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    left = 144
+    top = 216
+  end
+  object UpdateQuery: TSQLQuery
+    FieldDefs = <>
+    AutoCalcFields = False
+    Database = MySQL55Connection1
+    Transaction = UpdateQueryTransaction
+    Options = []
+    Params = <>
+    ParamCheck = False
+    UpdateMode = upWhereAll
+    left = 283
+    top = 184
+  end
+  object UpdateQueryTransaction: TSQLTransaction
+    Active = False
+    Action = caNone
+    Database = MySQL55Connection1
+    Options = []
+    left = 280
+    top = 259
+  end
+  object checkQuery: TSQLQuery
+    FieldDefs = <>
+    Database = MySQL55Connection1
+    Transaction = checkQueryTransaction
+    Options = []
+    Params = <>
+    ParamCheck = False
+    left = 426
+    top = 200
+  end
+  object checkQueryTransaction: TSQLTransaction
+    Active = False
+    Action = caNone
+    Database = MySQL55Connection1
+    Options = []
+    left = 432
+    top = 270
+  end
+  object TimerForRestart: TTimer
+    Interval = 60000
+    OnTimer = TimerForRestartTimer
+    left = 490
+    top = 42
+  end
+end
