@@ -10,3 +10,6 @@ https://www.upwork.com/o/profiles/users/_~0179f682f960496151/
 
 check code on github for backend automation yahoo bidder app for linux backend, written on lazarus IDE( Delphi compatible code ) with webkit 
 https://github.com/ryuriymega/yahoo_auction_japan_auto_bidder
+
+here a video demo 
+https://youtu.be/1ZauJa2FWhY
